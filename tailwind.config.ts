@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Ajout de couleurs personnalisées pour notre thème
+                postcard: {
+                    pink: '#F8D7DA',
+                    blue: '#D1ECF1',
+                    mint: '#D4EDDA',
+                    lavender: '#E2D9F3',
+                    yellow: '#FFF3CD',
+                    coral: '#FFD8CC'
+                }
 			},
+			fontFamily: {
+                quicksand: ['Quicksand', 'sans-serif'],
+                comfortaa: ['Comfortaa', 'cursive'],
+                opensans: ['Open Sans', 'sans-serif']
+            },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+                xl: '1rem',
+                '2xl': '1.5rem'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +101,21 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'bounce-light': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-5px)' }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'float': 'float 6s ease-in-out infinite',
+                'bounce-light': 'bounce-light 2s ease-in-out infinite'
 			}
 		}
 	},
