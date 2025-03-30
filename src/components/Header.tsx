@@ -1,13 +1,15 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Mail, ShoppingCart, User, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { toast } from 'sonner';
 
 const Header = () => {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: 'Accueil', path: '/' },
@@ -15,6 +17,18 @@ const Header = () => {
     { name: 'Modèles', path: '/templates' },
     { name: 'À propos', path: '/about' },
   ];
+
+  const handleCart = () => {
+    toast.info("Le panier sera disponible prochainement !");
+  };
+
+  const handleAccount = () => {
+    toast.info("La connexion au compte sera disponible prochainement !");
+  };
+
+  const handleCreate = () => {
+    navigate('/create');
+  };
 
   const NavLinks = () => (
     <div className="flex items-center gap-6">
@@ -32,13 +46,13 @@ const Header = () => {
 
   const ActionButtons = () => (
     <div className="flex items-center gap-3">
-      <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
+      <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary" onClick={handleCart}>
         <ShoppingCart className="h-5 w-5" />
       </Button>
-      <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary">
+      <Button variant="ghost" size="icon" className="text-foreground/70 hover:text-primary" onClick={handleAccount}>
         <User className="h-5 w-5" />
       </Button>
-      <Button className="btn-postcard">
+      <Button className="btn-postcard" onClick={handleCreate}>
         <Mail className="h-4 w-4 mr-2" />
         Créer une carte
       </Button>
@@ -64,7 +78,7 @@ const Header = () => {
             </Link>
           ))}
           <hr className="my-2" />
-          <Button className="btn-postcard w-full">
+          <Button className="btn-postcard w-full" onClick={handleCreate}>
             <Mail className="h-4 w-4 mr-2" />
             Créer une carte
           </Button>
@@ -79,7 +93,7 @@ const Header = () => {
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center">
             <Mail className="h-6 w-6 text-primary mr-2" />
-            <span className="font-comfortaa font-bold text-xl">Cardu</span>
+            <span className="font-comfortaa font-bold text-xl">Cardy</span>
           </Link>
           {!isMobile && <NavLinks />}
         </div>

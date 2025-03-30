@@ -6,8 +6,25 @@ import Canvas from '@/components/editor/Canvas';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Save, Download, Share2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 const Create = () => {
+  const handleSave = () => {
+    toast.success("Votre carte a été sauvegardée !");
+  };
+
+  const handleExport = () => {
+    toast.success("Votre carte a été exportée !");
+  };
+
+  const handleShare = () => {
+    toast.success("Lien de partage copié dans le presse-papier !");
+  };
+
+  const handleOrder = () => {
+    toast.success("Votre commande a été ajoutée au panier !");
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -18,15 +35,15 @@ const Create = () => {
             <p className="text-muted-foreground">Personnalisez votre carte en quelques clics</p>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleSave}>
               <Save className="h-4 w-4 mr-2" />
               Sauvegarder
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleExport}>
               <Download className="h-4 w-4 mr-2" />
               Exporter
             </Button>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleShare}>
               <Share2 className="h-4 w-4 mr-2" />
               Partager
             </Button>
@@ -49,7 +66,7 @@ const Create = () => {
         </Tabs>
         
         <div className="flex justify-end mt-8">
-          <Button className="btn-postcard">
+          <Button className="btn-postcard" onClick={handleOrder}>
             Commander cette carte
           </Button>
         </div>
