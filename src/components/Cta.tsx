@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Cta = () => {
   return (
@@ -13,10 +14,12 @@ const Cta = () => {
             Exprimez vos sentiments à travers une carte postale unique et personnalisée. 
             Commencez dès aujourd'hui et envoyez un souvenir qui durera.
           </p>
-          <Button className="btn-postcard text-lg px-8 py-6">
-            <Mail className="h-5 w-5 mr-2" />
-            Commencer à créer
-          </Button>
+          <Link to="/create">
+            <Button className="btn-postcard text-lg px-8 py-6">
+              <Mail className="h-5 w-5 mr-2" />
+              Commencer à créer
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

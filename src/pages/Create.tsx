@@ -4,14 +4,34 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Canvas from '@/components/editor/Canvas';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { Save, Download, Share2 } from 'lucide-react';
 
 const Create = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container py-8">
-        <h1 className="text-3xl font-bold mb-2">Créer votre carte postale</h1>
-        <p className="text-muted-foreground mb-6">Personnalisez votre carte en quelques clics</p>
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <h1 className="text-3xl font-bold mb-2">Créer votre carte postale</h1>
+            <p className="text-muted-foreground">Personnalisez votre carte en quelques clics</p>
+          </div>
+          <div className="flex gap-2">
+            <Button variant="outline" size="sm">
+              <Save className="h-4 w-4 mr-2" />
+              Sauvegarder
+            </Button>
+            <Button variant="outline" size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              Exporter
+            </Button>
+            <Button variant="outline" size="sm">
+              <Share2 className="h-4 w-4 mr-2" />
+              Partager
+            </Button>
+          </div>
+        </div>
         
         <Tabs defaultValue="front" className="mb-8">
           <TabsList>
@@ -27,6 +47,12 @@ const Create = () => {
             </div>
           </TabsContent>
         </Tabs>
+        
+        <div className="flex justify-end mt-8">
+          <Button className="btn-postcard">
+            Commander cette carte
+          </Button>
+        </div>
       </main>
       <Footer />
     </div>

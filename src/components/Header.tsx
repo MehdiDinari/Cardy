@@ -79,7 +79,7 @@ const Header = () => {
         <div className="flex items-center gap-6">
           <Link to="/" className="flex items-center">
             <Mail className="h-6 w-6 text-primary mr-2" />
-            <span className="font-comfortaa font-bold text-xl">PostCarte</span>
+            <span className="font-comfortaa font-bold text-xl">Cardu</span>
           </Link>
           {!isMobile && <NavLinks />}
         </div>

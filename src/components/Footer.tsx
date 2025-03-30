@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1">
             <Link to="/" className="flex items-center">
               <Mail className="h-6 w-6 text-primary mr-2" />
-              <span className="font-comfortaa font-bold text-xl">PostCarte</span>
+              <span className="font-comfortaa font-bold text-xl">Cardu</span>
             </Link>
             <p className="mt-4 text-muted-foreground">
               Créez des cartes postales uniques et personnalisées pour toutes les occasions.
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-4 border-t text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} PostCarte. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Cardu. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
